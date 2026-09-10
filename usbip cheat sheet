@@ -1,0 +1,12 @@
+# 1. LINUX HOST: Find USB Bus ID
+lsusb
+
+# 2. LINUX HOST: Bind Device (replace 1-X with actual Bus ID)
+sudo usbip bind -b 1-X
+
+# 3. WINDOWS CLIENT: Attach Device (PowerShell as Admin)
+cd C:\usbip-win
+.\usbip.exe attach -r 100.85.219.83 -b 1-X
+
+# 4. WINDOWS CLIENT: Detach when finished
+.\usbip.exe detach -p 0
